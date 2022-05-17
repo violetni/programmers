@@ -1,0 +1,16 @@
+def solution(clothes):
+    answer = 1
+    dic = {}
+    
+    for i in clothes:
+        c_name=i[0]
+        c_type=i[1]
+        if c_type in dic:
+            dic[c_type].append(c_name)
+        else:
+            dic[c_type] = [c_name]
+    
+    for key in dic.keys():
+        answer*=len(dic[key])+1
+        
+    return answer-1
